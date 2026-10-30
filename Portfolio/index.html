@@ -51,7 +51,7 @@
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </a>
-                    <a href="#contact" class="btn btn-outline">
+                    <a href="../resume.pdf" class="btn btn-outline" download="Pankaj-Kumar-Mahto-Resume.pdf">
                         Download Resume 
                         <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -404,6 +404,29 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+
+                e.preventDefault();
+
+                const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+                const topOffset = navbarHeight + 20;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+
+                window.scrollTo({
+                    top: elementPosition - topOffset,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
