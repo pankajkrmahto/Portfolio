@@ -724,6 +724,22 @@ img {
     margin: 0 auto 3rem auto;
 }
 
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contact-intro {
+    max-width: 760px;
+    text-align: center;
+}
+
+.contact-intro .section-title.left-align {
+    text-align: center;
+}
+
 .contact-desc {
     font-size: 1.05rem;
     color: var(--text-light-muted);
@@ -733,7 +749,7 @@ img {
 
 .contact-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
     width: 100%;
     max-width: 960px;
@@ -748,6 +764,7 @@ img {
     display: flex;
     align-items: center;
     gap: 1rem;
+    min-height: 120px;
     backdrop-filter: blur(12px);
     text-decoration: none;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
@@ -801,6 +818,7 @@ img {
     font-size: 0.92rem;
     font-weight: 600;
     color: #ffffff;
+    line-height: 1.5;
     word-break: break-word;
     transition: var(--transition);
 }
